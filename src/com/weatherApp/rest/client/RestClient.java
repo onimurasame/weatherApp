@@ -50,19 +50,4 @@ public class RestClient {
 
 		return response.getEntity(String.class);
 	}
-
-	public static void main(String[] args) {
-		RestClient rc = new RestClient();
-
-		Map<String, String> argsMap = new HashMap<String, String>();
-
-		argsMap.put("q", "Sacramento,us");
-		argsMap.put("appId", "bd82977b86bf27fb59a04b61b657fb6f");
-		argsMap.put("mode", "json");
-		argsMap.put("units", "metric");
-
-		System.out.println(rc.getAllXML(argsMap));
-		System.out.println(rc.getAllJSON(argsMap));
-
-	}
 }

@@ -1,10 +1,5 @@
 package com.weatherApp.rest.bean;
 
-import java.util.Date;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -112,25 +107,5 @@ public class City {
 	 */
 	public void setSun(Sun sun) {
 		this.sun = sun;
-	}
-
-	public static void main(String[] args) {
-		City city = new City(new Coordinate(10.0,10.0), 1, "Vina del Mar", "CL", new Sun(new Date(), new Date()));
-		
-		JAXBContext jaxbContext;
-		try {
-			jaxbContext = JAXBContext.newInstance(City.class);
-
-			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-
-			// output pretty printed
-			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-			jaxbMarshaller.marshal(city, System.out);
-		
-		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 }

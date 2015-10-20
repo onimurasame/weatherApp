@@ -3,18 +3,44 @@
  */
 package com.weatherApp.rest.bean;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
 /**
  * @author onimu
  *
  */
+@XmlType
+@XmlRootElement(name = "temperature")
 public class Temperature {
 	private Double value;
 	private Double minimum;
 	private Double maximum;
 	private String unit;
+	
+	public Temperature() {
+		// TODO Auto-generated constructor stub
+	}
+		
+	/**
+	 * @param value
+	 * @param minimum
+	 * @param maximum
+	 * @param unit
+	 */
+	public Temperature(Double value, Double minimum, Double maximum, String unit) {
+		super();
+		this.value = value;
+		this.minimum = minimum;
+		this.maximum = maximum;
+		this.unit = unit;
+	}
+
 	/**
 	 * @return the value
 	 */
+	@XmlAttribute(name = "value")
 	public Double getValue() {
 		return value;
 	}
@@ -27,6 +53,7 @@ public class Temperature {
 	/**
 	 * @return the minimum
 	 */
+	@XmlAttribute(name = "min")
 	public Double getMinimum() {
 		return minimum;
 	}
@@ -39,6 +66,7 @@ public class Temperature {
 	/**
 	 * @return the maximum
 	 */
+	@XmlAttribute(name = "max")
 	public Double getMaximum() {
 		return maximum;
 	}
@@ -51,6 +79,7 @@ public class Temperature {
 	/**
 	 * @return the unit
 	 */
+	@XmlAttribute(name = "unit")
 	public String getUnit() {
 		return unit;
 	}
