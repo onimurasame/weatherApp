@@ -6,7 +6,6 @@ package com.weatherApp.rest.bean;
 import java.io.File;
 import java.io.StringWriter;
 import java.util.Date;
-import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -74,8 +73,6 @@ public class CurrentWeatherTest {
 
 			Marshaller marshaller = jc.createMarshaller();
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			//marshaller.setProperty(Marshaller.JAXB_NO_NAMESPACE_SCHEMA_LOCATION,
-				//	"file:///C:/Documents%20and%20Settings/mojalal/Desktop/FirstXSD.xml");
 			marshaller.marshal(object, System.out);
 			return object;
 		} catch (JAXBException e) {
